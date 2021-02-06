@@ -1,1 +1,0 @@
-# ricardogpinho.github.io
