@@ -3,7 +3,7 @@ layout: default
 pagination:
   enabled: true
   collection: posts
-  permalink: /page/:num/
+  paginate_path: /page/:num/
   per_page: 3
   sort_field: date
   sort_reverse: true
@@ -19,7 +19,7 @@ pagination:
     <h2>{{ site.blog_description }}</h2>
   </div>
 
-{{paginator.total_posts}}
+
   <ul class="post-list">
     {% for post in paginator.posts %}
       <li>
