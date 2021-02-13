@@ -71,6 +71,7 @@ permalink: /blog/:year/:title/
 # Pagination
 pagination:
   paginate: 3
+  paginate_path: "/blog/page:num/"
   enabled: true
 
 # Comments
