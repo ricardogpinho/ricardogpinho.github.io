@@ -19,7 +19,7 @@ pagination:
     <h2>{{ site.blog_description }}</h2>
   </div>
 
-
+{{paginator.total_posts}}
   <ul class="post-list">
     {% for post in paginator.posts %}
       <li>
