@@ -70,6 +70,7 @@ permalink: /blog/:year/:title/
 
 # Pagination
 pagination:
+  paginate: 3
   enabled: true
 
 # Comments
