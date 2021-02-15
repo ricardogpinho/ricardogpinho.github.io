@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  setting up a gemini server
-date: 2020-09-28 21:01:00
+date: 2021-02-15 22:23:00
 description: using a raspberry pi as a gemini server
 ---
 
