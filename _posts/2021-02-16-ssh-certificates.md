@@ -26,7 +26,7 @@ There are many ways to do this, but the aim is to put our public key in the defa
 
 `ssh-copy-id -i /home/{username}/.ssh/{name_of_our_key.pub} user@host`
 
-* `-i`flag is to identify the key to be sent to the host
+* `-i` flag is to identify the key to be sent to the host
 * `user@host` is our user and server computer
 
 Simple as that, our public key was added in the `~/.ssh/authorized_keys` in our server.
