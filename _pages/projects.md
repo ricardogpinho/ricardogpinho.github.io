@@ -37,7 +37,14 @@ nav: true
               {% endif %}
             </div>
             {% endif %}
-          </div>
+            {% if project.gitlab %}
+            <div class="gitlab-icon">
+              <div class="icon" data-toggle="tooltip" title="Code Repository">
+                <a href="{{ project.gitlab }}" target="_blank"><i class="fab fa-gitlab gh-icon"></i></a>
+              </div>
+            </div>
+            {% endif %}
+          </div>  
         </div>
       </div>
     </a>
