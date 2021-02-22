@@ -13,7 +13,7 @@ I met incredible people, passionate for programming and living.
 
 ***
 
-Here are some the masterpieces I drew in my free time 😅!
+Here are some the masterpieces I drew on my free time 😅!
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-4">
