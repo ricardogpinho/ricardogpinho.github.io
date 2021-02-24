@@ -54,7 +54,7 @@ Quickly we gathered most of the graphics we needed and assembled the map of the 
 </div>
 
 With graphics mostly settled, we began working on the game input, character movements and movement restrictions.
-With that done, was time to implement shooting. This was tricky... because the arrows would have to spawn on key-press trigger and then disappear at hitting a character, object or reach the end of the map. It required a linked list, but we manages it.
+With that done, was time to implement shooting. This was tricky... because the arrows would have to spawn on key-press trigger and then disappear on hitting a character, object or reach the end of the map. It required a linked list, but we managed it.
 
 That implemented, was time for making the autonomous player move and shoot as well. With some logic and randomness generation this was also achieved.
 

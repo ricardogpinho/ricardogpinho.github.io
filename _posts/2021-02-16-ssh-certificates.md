@@ -11,15 +11,15 @@ Following my project on my Raspberry Pi from yesterday, I found myself permanent
 But today I stumbled upon key-based authentication. And I'm never going back to passwords!
 Key-based authentication is very similar, I think, to the S in the HTTPS protocol, i.e. the encryption bit of the thing.
 
-In key-based authentication there is a private key and a public key. They both are related.
-The computer holding the server grants access to a public key. The private key stays on the client for encryption purposes.
+In key-based authentication there is a private key and a public key. They are both related.
+The computer running the server has to grant access to public keys, so it needs to store a database of these keys somewhere on the disk. The client, on requesting access to the server, sends it's authentication public key to the server, and the server checks if it matches one of it's stored valid keys. The private key always stays on the client side for encryption purposes.
 
-In order to generate such pair of public-private key there is a neat command in Linux called `ssh-keygen`. Usually this command is used with the flags `-t -b`
+In order to generate such pair of public-private keys there is a neat command in Linux called `ssh-keygen`. This command is typically used with the flags `-t -b`
 
-* `-t` stands for the type, and usually `rsa` is the preferred choice.
+* `-t` stands for the type, and `rsa` is usually the preferred choice.
 * `-b` stand for the key size in bits. `2048` is the default, but often `4096` is used.
 
-So, in order to generate a pair of keys the following command is usually used: `ssh-keygen -t rsa -b 4096`.
+So, in order to generate a pair of keys the following command is typically used: `ssh-keygen -t rsa -b 4096`.
 This generates the keys and puts them in the `/home/{username}/.ssh/` directory in our computer.
 The next step is to give our public key to the server, so it allows us in.
 There are many ways to do this, but the aim is to put our public key in the default ssh directory of the server computer in the file `/home/{username}/.ssh/authorized_keys`. We can copy our key into this file manually and give it the right permissions, but the easiest way to do this is to run a command on the terminal of the computer in which we generated the keys:
