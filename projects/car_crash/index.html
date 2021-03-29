@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Ricardo  Pinho | ricardogpinho</title>
+<title>Ricardo  Pinho | Car Crash</title>
 <meta name="description" content="My github portfolio website
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/car_crash/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -94,7 +94,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
               
@@ -144,54 +144,34 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>what i'm up to</h1>
-    <h2>i'll try to update frequently</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Car Crash</h1>
+    <p class="post-description">An experimental non-controllable game</p>
+  </header>
 
+  <article>
+    <p>This game is a simple project written in <em>JAVA</em> with the intuit of getting familiar with the <em>lanterna</em> library.
+I only had one weekend to put it together and it was part of my <em>Academia de Código</em> bootcamp.</p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/symbolic-links/">symbolic links</a></h3>
-        <p class="post-meta">March 9, 2021</p>
-        <p>using symbolic links in linux</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/CSS3-flexbox/">CSS flexbox</a></h3>
-        <p class="post-meta">February 28, 2021</p>
-        <p>I finally took some time and learned CSS3 flexbox, it was easier than I expected</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/ssh-certificates/">ssh certificates</a></h3>
-        <p class="post-meta">February 16, 2021</p>
-        <p>today I discovered SSH key-based authentication.</p>
-      </li>
-    
-  </ul>
+<p>A base code was provided and it was asked to us to draw the cars (small rectangles) on the display and make them move in a minimal realistic way. If the cars would crash, they had to stop moving. Different variety of cars were required, cars that would move at different speeds and have different proprieties. The following minimum car types were required:</p>
+<ul>
+  <li>Normal cars only with different speeds</li>
+  <li>A Tank that would never crash</li>
+  <li>An ambulance that would fix crashed cars</li>
+</ul>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="ricardogpinho">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="ricardogpinho - page 2">2</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<p>Once this requirements were met, we were allowed to be creative and implement whatever we wanted on top of it.
+I went a bit further an created a route system for every car, and also I made a <em>Tesla</em> type car that would avoid crashing. Almost…</p>
 
+<p>The route system consists in every car requesting it’s own new route once it reaches it’s destination, by getting it’s current grid position, asking for a final position and creating an entire path from it’s current to final position. This can be witnessed in the Tesla movement, in which I drew the route on the display for us to be able to see what’s going on.</p>
 
+<p>The Tesla is capable to avoid accidents, but there are occasions it can crash, specially against another equally fast cars. I couldn’t solve this within the time I had to finish the project.</p>
+
+<p>A demo follows.</p>
+
+<p><img src="/assets/img/projects/car_crash/car_crash_gameplay.gif" class="img-fluid" /></p>
+
+  </article>
 
 </div>
 
