@@ -11,14 +11,14 @@ I decided to create this post on symbolic links because they are interesting, po
 
 My first encounter with symbolic links was some weeks ago. I discovered them in the most stupid way. But I'm not going to tell that story, I'm just going to say that I needed to format my computer. Don't mess with `usr/bin` btw.
 
-I writing this because I'm using symbolic links now to create my *dotfiles* repository.
+I'm writing this post now because I'm currently using symbolic links to create my *dotfiles* repository.
 
 Simple:
 - I create a `dotfiles` directory somewhere in the disk
 - I make that directory a git repository
 - I dump all my configuration files in there (i.e. `.bashrc, .vimrc, and so on`)
 
-The thing is those configuration files are expected to be on their respective places, not on my `dotfiles` directory. That's where symbolic (symlinks) links comes in:
+The thing is that those configuration files are expected to be on their respective places, not on my `dotfiles` directory. That's where symbolic (symlinks) links comes in:
 
 It is possible to redirect files and folders to others places with these links.
 
