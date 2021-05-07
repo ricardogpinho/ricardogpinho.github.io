@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Ricardo  Pinho | ricardogpinho</title>
+<title>Ricardo  Pinho | symbolic links</title>
 <meta name="description" content="My github portfolio website
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2021/symbolic-links/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -142,56 +142,47 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>what i'm up to</h1>
-    <h2>i'll try to update frequently</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">symbolic links</h1>
+    <p class="post-meta">March 9, 2021</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/symbolic-links/">symbolic links</a></h3>
-        <p class="post-meta">March 9, 2021</p>
-        <p>using symbolic links in linux</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/CSS3-flexbox/">CSS flexbox</a></h3>
-        <p class="post-meta">February 28, 2021</p>
-        <p>I finally took some time and learned CSS3 flexbox, it was easier than I expected</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/ssh-certificates/">ssh certificates</a></h3>
-        <p class="post-meta">February 16, 2021</p>
-        <p>today I discovered SSH key-based authentication.</p>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+    <p>Today I’m messing with a bunch of stuff… my neovim configurations and my dotfiles repository that I’m just starting to put together.</p>
+
+<p>I decided to create this post on symbolic links because they are interesting, powerful, they don’t exist on windows I believe (maybe they do) and they can make you destroy your computer.</p>
+
+<p>My first encounter with symbolic links was some weeks ago. I discovered them in the most stupid way. But I’m not going to tell that story, I’m just going to say that I needed to format my computer. Don’t mess with <code class="language-plaintext highlighter-rouge">usr/bin</code> btw.</p>
+
+<p>I’m writing this post now because I’m currently using symbolic links to create my <em>dotfiles</em> repository.</p>
+
+<p>Simple:</p>
+<ul>
+  <li>I create a <code class="language-plaintext highlighter-rouge">dotfiles</code> directory somewhere in the disk</li>
+  <li>I make that directory a git repository</li>
+  <li>I dump all my configuration files in there (i.e. <code class="language-plaintext highlighter-rouge">.bashrc, .vimrc, and so on</code>)</li>
+</ul>
+
+<p>The thing is that those configuration files are expected to be on their respective places, not on my <code class="language-plaintext highlighter-rouge">dotfiles</code> directory. That’s where symbolic (symlinks) links comes in:</p>
+
+<p>It is possible to redirect files and folders to others places with these links.</p>
+
+<p>For instance, I need to have my file <code class="language-plaintext highlighter-rouge">.bashrc</code> in my <code class="language-plaintext highlighter-rouge">$HOME</code> directory in order for bash to find it and apply the configurations. But if I have that file in my <em>dotfiles</em> directory, bash can’t find it. So… We create a symbolic link:</p>
+
+<p><code class="language-plaintext highlighter-rouge">ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc</code></p>
+
+<p>The command above will create in <code class="language-plaintext highlighter-rouge">$HOME</code> a symbolic link named <code class="language-plaintext highlighter-rouge">.bashrc</code> that is a link (not a file with contents) to the actual file <code class="language-plaintext highlighter-rouge">.bashrc</code> which is in <code class="language-plaintext highlighter-rouge">$HOME/dotfiles</code>.
+It’s like portals.</p>
+
+<p>This way I can have all of my configuration files in my <code class="language-plaintext highlighter-rouge">$HOME/dotfiles</code> directory, and simply create symbolic links where they are expected to be. All of this to make a repository with all of them.</p>
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="ricardogpinho">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="ricardogpinho - page 2">2</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 

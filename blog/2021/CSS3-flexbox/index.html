@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Ricardo  Pinho | ricardogpinho</title>
+<title>Ricardo  Pinho | CSS flexbox</title>
 <meta name="description" content="My github portfolio website
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2021/CSS3-flexbox/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -142,56 +142,45 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>what i'm up to</h1>
-    <h2>i'll try to update frequently</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">CSS flexbox</h1>
+    <p class="post-meta">February 28, 2021</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/symbolic-links/">symbolic links</a></h3>
-        <p class="post-meta">March 9, 2021</p>
-        <p>using symbolic links in linux</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/CSS3-flexbox/">CSS flexbox</a></h3>
-        <p class="post-meta">February 28, 2021</p>
-        <p>I finally took some time and learned CSS3 flexbox, it was easier than I expected</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/ssh-certificates/">ssh certificates</a></h3>
-        <p class="post-meta">February 16, 2021</p>
-        <p>today I discovered SSH key-based authentication.</p>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+    <p>I learned CSS2 many years ago, back in 2007 if I remember. I made a simple website for the theater club I was involved at school at the time. I remember I’d built a flash website in the year 2006, and the next year, with the intention of learning HTML and CSS I built a new one using those technologies. Also I began learning some PHP in those years.</p>
+
+<p>Well, years passed and I never looked back at CSS again, but just watching today’s very responsive websites, I’m always wondering how complex is the styling underneath.</p>
+
+<p>Today I decided to take a look at the flexbox technology of CSS3. Turned out to not be much difficult.</p>
+
+<p>To make use of flexbox we just need to style some html element with the property <code class="language-plaintext highlighter-rouge">display: flex</code>. Every child of this element will be affected and displayed as <em>flex</em>. Usually people classify this first element the <code class="language-plaintext highlighter-rouge">class="container"</code>.</p>
+
+<p>Then we have a bunch of properties we can add to the child elements in order to control the layouts. I will not list them all here because there are many websites you can check this, but they aren’t many and they aren’t difficult to understand.</p>
+
+<p>Another thing I also learned was media queries. <code class="language-plaintext highlighter-rouge">@media ... (...)</code>.
+That isn’t difficult at all as well, you can affect your layouts for printing, different screen sizes, and speech, dynamically only with this queries. For example:</p>
+
+<pre><code class="language-CSS">@media screen (max-width: 400px;){
+	body {
+		background-color: blue;
+	}
+}
+</code></pre>
+
+<p>In the example above, every time our screen width is bellow <em>400px</em> the background color will be blue, if we resize the window above that value, the background color will change to the default color we had previously set in our CSS file.</p>
+
+<p>We can make layouts change dynamically with this.</p>
+
+<p>That was it for today.</p>
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="ricardogpinho">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="ricardogpinho - page 2">2</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 

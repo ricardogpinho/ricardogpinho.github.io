@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Ricardo  Pinho | ricardogpinho</title>
+<title>Ricardo  Pinho | setting up a gemini server</title>
 <meta name="description" content="My github portfolio website
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2021/setting-up-a-gemini-server/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -142,56 +142,48 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>what i'm up to</h1>
-    <h2>i'll try to update frequently</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">setting up a gemini server</h1>
+    <p class="post-meta">February 15, 2021</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/symbolic-links/">symbolic links</a></h3>
-        <p class="post-meta">March 9, 2021</p>
-        <p>using symbolic links in linux</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/CSS3-flexbox/">CSS flexbox</a></h3>
-        <p class="post-meta">February 28, 2021</p>
-        <p>I finally took some time and learned CSS3 flexbox, it was easier than I expected</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/ssh-certificates/">ssh certificates</a></h3>
-        <p class="post-meta">February 16, 2021</p>
-        <p>today I discovered SSH key-based authentication.</p>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+    <p>So, as soon as I heard about Gemini and saw in what it consists, I knew I had to jump on the train and set-up my own server and own <em>webpage</em>.</p>
+
+<p>For those who aren’t familiar with Gemini, Gemini is a new Internet protocol for transferring rich text. Similar to HTTP but, in many ways, different… Gemini aims to be what HTTP and HTML were in the past, in the very early days of the Web. In the early days, the <em>World Wide Web</em> was very simple and humble. Different from what we have today, there weren’t dynamic pages, cascading style sheets and there was very little javascript. Internet was in fact very simple and humble, a place for the curious minds and a place you’d encounter a genuine passion driven community.
+Today the web is filled with disposable content, with all sorts of people and communities gathering in a chaos that seems to have no end. That’s where Gemini comes in:</p>
+
+<p>Where the HTML protocol has web pages, the Gemini protocol has capsules.
+An HTML web page, usually, ends in <code class="language-plaintext highlighter-rouge">.html</code>. A Gemini capsule page ends in <code class="language-plaintext highlighter-rouge">.gmi</code>.
+The syntax is very simple. In 10 minutes you can learn about 90% of the syntax. It’s very similar to Markdown.</p>
+
+<p>So, today I embargoed on this quest of setting up my own Gemini server and serving my very first capsule.</p>
+
+<p>The goal was to put the server running on a Raspberry Pi I had laying around with no use for a long time.
+The good thing, I already had the Raspberry with the operating system installed on the SD card. So, that was a good start.</p>
+
+<p>Then, I had to choose a server for it to run. That’s when I started to face the some difficulties.</p>
+
+<p>I knew <a href="https://github.com/mbrubeck/agate">Agate</a> was a good server for reference on the Internet, and I did previously tested it on my main computer. It was simple and easy. The problem was, <em>Agate</em> is written in <em>Rust</em> and the Raspberry doesn’t come with it installed, nor even has it in it’s repositories. I thought cloning <em>Rust</em> from it’s git page and compiling it and installing it, but… I thought that wouldn’t be easy, once the Raspberry Pi uses an ARM V6 architecture. So I immediately discarded that option. Probably it would be possible, but with so many Gemini servers to choose I certainly could find another one not written in <em>Rust</em>.</p>
+
+<p>After some tries and research I landed on the <a href="https://github.com/michael-lazar/jetforce">jetforce</a>, which is written in python. That’s good, RPI comes with Python…</p>
+
+<p>I followed the instructions provided on the <em>jetforce</em> repository and in 20 minutes I had my server running locally.
+The problem arrived when I tried to make the server run as a service in Linux. I wanted for it to start even if the Raspberry Pi restarted.
+But following the instructions on the repository, something wasn’t working.
+After about 2 hours into this, I decided to open an issue in the repository, explaining my trouble. Luckily, and gratefully, the owner replied me very quickly, with very clear instructions. Turned out it was only an user thing of Linux. I was launching the service as root instead from an user apparently.</p>
+
+<p>If you want to learn more about Gemini, <a href="https://gemini.circumlunar.space/">here</a> is most of what you need to know. Servers, clients, how it works and what it purposes. I am still learning too. As well learning how to write blogs… and good english :\</p>
+
+<p>That’s it for now. If you did read everything up to this point, I hope I haven’t broken your English and if you want to check my personal Gemini capsule you can check it with an appropriate <a href="https://github.com/kr1sp1n/awesome-gemini#clients">client</a>. My capsule is <a href="gemini://ricardogpt.ddnsfree.com">gemini://ricardogpt.ddnsfree.com</a>. And if you want to set up your own, you can find a numerous of servers also <a href="https://github.com/kr1sp1n/awesome-gemini#servers">here</a>.</p>
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="ricardogpinho">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="ricardogpinho - page 2">2</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 

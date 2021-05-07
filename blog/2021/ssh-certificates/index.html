@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Ricardo  Pinho | ricardogpinho</title>
+<title>Ricardo  Pinho | ssh certificates</title>
 <meta name="description" content="My github portfolio website
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2021/ssh-certificates/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -142,56 +142,52 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>what i'm up to</h1>
-    <h2>i'll try to update frequently</h2>
-  </div>
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">ssh certificates</h1>
+    <p class="post-meta">February 16, 2021</p>
+  </header>
+
+  <article class="post-content">
+    <p>Following my project on my Raspberry Pi from yesterday, I found myself permanently <em>‘SSHing’</em> in my Raspberry Pi. Every time I logged in into it I had to insert my password, obviously.
+But today I stumbled upon key-based authentication. And I’m never going back to passwords!
+Key-based authentication is very similar, I think, to the S in the HTTPS protocol, i.e. the encryption bit of the thing.</p>
+
+<p>In key-based authentication there is a private key and a public key. They are both related.
+The computer running the server has to grant access to public keys, so it needs to store a database of these keys somewhere on the disk. The client, on requesting access to the server, sends it’s authentication public key to the server, and the server checks if it matches one of it’s stored valid keys. The private key always stays on the client side for encryption purposes.</p>
+
+<p>In order to generate such pair of public-private keys there is a neat command in Linux called <code class="language-plaintext highlighter-rouge">ssh-keygen</code>. This command is typically used with the flags <code class="language-plaintext highlighter-rouge">-t -b</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-t</code> stands for the type, and <code class="language-plaintext highlighter-rouge">rsa</code> is usually the preferred choice.</li>
+  <li><code class="language-plaintext highlighter-rouge">-b</code> stand for the key size in bits. <code class="language-plaintext highlighter-rouge">2048</code> is the default, but often <code class="language-plaintext highlighter-rouge">4096</code> is used.</li>
+</ul>
+
+<p>So, in order to generate a pair of keys the following command is typically used: <code class="language-plaintext highlighter-rouge">ssh-keygen -t rsa -b 4096</code>.
+This generates the keys and puts them in the <code class="language-plaintext highlighter-rouge">/home/{username}/.ssh/</code> directory in our computer.
+The next step is to give our public key to the server, so it allows us in.
+There are many ways to do this, but the aim is to put our public key in the default ssh directory of the server computer in the file <code class="language-plaintext highlighter-rouge">/home/{username}/.ssh/authorized_keys</code>. We can copy our key into this file manually and give it the right permissions, but the easiest way to do this is to run a command on the terminal of the computer in which we generated the keys:</p>
+
+<p><code class="language-plaintext highlighter-rouge">ssh-copy-id -i /home/{username}/.ssh/{name_of_our_key.pub} user@host</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-i</code> flag is to identify the key to be sent to the host</li>
+  <li><code class="language-plaintext highlighter-rouge">user@host</code> is our user and server computer</li>
+</ul>
+
+<p>Simple as that, our public key was added in the <code class="language-plaintext highlighter-rouge">~/.ssh/authorized_keys</code> in our server.</p>
+
+<p>The next time we attempt to login no password will be required.</p>
+
+<p>I went a little further and made an alias to my connection. By simple typing <code class="language-plaintext highlighter-rouge">sshpi</code> I’m now logged in!</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/symbolic-links/">symbolic links</a></h3>
-        <p class="post-meta">March 9, 2021</p>
-        <p>using symbolic links in linux</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/CSS3-flexbox/">CSS flexbox</a></h3>
-        <p class="post-meta">February 28, 2021</p>
-        <p>I finally took some time and learned CSS3 flexbox, it was easier than I expected</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/ssh-certificates/">ssh certificates</a></h3>
-        <p class="post-meta">February 16, 2021</p>
-        <p>today I discovered SSH key-based authentication.</p>
-      </li>
-    
-  </ul>
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="ricardogpinho">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="ricardogpinho - page 2">2</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 
